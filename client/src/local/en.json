@@ -1,0 +1,30 @@
+{
+  "home": {
+    "hero_badge": "Next-Gen AI Blogging Platform",
+    "hero_title": "Write. Create. Inspire.",
+    "hero_subtitle": "Experience the future of blogging with AI-powered creativity.",
+    "btn_write": "Start Writing",
+    "btn_dashboard": "Dashboard",
+    "btn_help": "Help Center",
+    "tools_title": "Explore More Tools",
+    "tools_desc": "From AI editing to analytics — everything you need for next-level blogging.",
+    "error_load": "Failed to load posts. Showing demo content."
+  },
+  "voice": {
+    "title": "Voice to Text",
+    "clear": "Clear",
+    "listening": "Listening...",
+    "click_to_start": "Click the microphone to start voice input",
+    "confidence": "Confidence",
+    "error_not_supported": "Speech recognition is not supported in this browser.",
+    "try_other_browser": "Please try Chrome, Edge, or Safari.",
+    "error_no_speech": "No speech detected. Please try again.",
+    "error_audio": "Microphone not accessible.",
+    "error_permission": "Microphone access denied.",
+    "error_network": "Network error.",
+    "error_generic": "Speech recognition error",
+    "tip_1": "• Speak clearly and at a normal pace.",
+    "tip_2": "• Ensure you're in a quiet environment.",
+    "tip_3": "• Grant microphone permissions when prompted."
+  }
+}

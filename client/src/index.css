@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --surface: #ffffff;
+  --muted: #6b7280;
+}
+
+
+body {
+  @apply antialiased bg-[var(--surface)] text-gray-900;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+
+.hero { @apply rounded-2xl p-6 md:p-10 bg-gradient-to-r from-white/70 to-sky-50 dark:from-gray-800 dark:to-gray-900 shadow-lg; }
+.card { @apply bg-white dark:bg-gray-800 rounded-2xl p-6 md:p-8 shadow-md; }
+.btn-cta { @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-sky-500 to-cyan-400 text-white font-medium shadow transition-transform hover:-translate-y-0.5; }
+
+
+.input { @apply w-full px-3 py-2 rounded-lg border bg-transparent focus:ring-2 focus:ring-sky-300; }
+
+
+.search-results { z-index: 60; position: absolute; left:0; right:0; }

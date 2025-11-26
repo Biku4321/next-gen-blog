@@ -1,0 +1,76 @@
+version: "3.8"
+
+services:
+  # ✅ 1. Backend Service
+  server:
+    build:
+      context: ./Blogging/server  # Point to the server folder
+      dockerfile: Dockerfile
+    container_name: blog_server
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=development
+      - PORT=5000
+      - MONGO_URI=mongodb://mongo:27017/blog_db
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=your_super_secret_key_change_this
+      # Make sure this matches your Client service port
+      - CLIENT_URL=http://localhost:5173 
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+      - redis
+    networks:
+      - blog-network
+    volumes:
+      - ./Blogging/server:/usr/src/app
+      - /usr/src/app/node_modules
+
+  # ✅ 2. Frontend Service (Added this for you)
+  client:
+    build:
+      context: ./Blogging/client
+      dockerfile: Dockerfile # You need to create a Dockerfile in client/ too, or remove this service and run npm run dev locally
+    container_name: blog_client
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:5000/api
+    depends_on:
+      - server
+    networks:
+      - blog-network
+    volumes:
+      - ./Blogging/client:/app
+      - /app/node_modules
+
+  # ✅ 3. Database
+  mongo:
+    image: mongo:6.0
+    container_name: blog_mongo
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - blog-network
+    ports:
+      - "27017:27017"
+
+  # ✅ 4. Cache
+  redis:
+    image: redis:7-alpine
+    container_name: blog_redis
+    restart: unless-stopped
+    volumes:
+      - redis-data:/data
+    networks:
+      - blog-network
+
+volumes:
+  mongo-data:
+  redis-data:
+
+networks:
+  blog-network:
+    driver: bridge
