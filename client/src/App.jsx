@@ -25,7 +25,7 @@ const SignUp = lazy(() => import("./pages/SignUp.jsx"));
 const Dashboard = lazy(() => import("./pages/Dashboard.jsx"));
 const Editor = lazy(() => import("./components/Editor.jsx"));
 const Analytics = lazy(() => import("./pages/Analytics.jsx"));
-const Profile = lazy(() => import("./pages/Profile.jsx"));
+const Profile = lazy(() => import("./pages/profile.jsx"));
 const SettingsPage = lazy(() => import("./pages/Settings.jsx"));
 const NotificationDropdown = lazy(() => import("./components/NotificationDropdown.jsx"));
 const AiStudioPage = lazy(() => import("./components/AiStudioPage.jsx"));
