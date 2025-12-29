@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Settings } from "lucide-react";
-import AIEditor from "../components/AIEditor";
+import AIEditor from "../components/AiEditor";
 import { useAI } from "../context/AIContext";
 import API from "../services/api";
 import { useNavigate, useSearchParams } from "react-router-dom";

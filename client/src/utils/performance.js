@@ -1,5 +1,5 @@
 // client/src/utils/performance.js - Frontend Performance Utils
-import { lazy, Suspense } from 'react';
+import React, { lazy, useState,useEffect,Suspense,useRef } from 'react';
 import { motion } from 'framer-motion';
 
 // Code splitting with React.lazy
@@ -103,17 +103,5 @@ export const performanceMonitor = {
         }
       }
     };
-  }
-};
-
-// Bundle analyzer webpack plugin config
-export const bundleAnalyzer = {
-  webpack: (config) => {
-    if (process.env.ANALYZE) {
-      config.plugins.push(
-        new (require('webpack-bundle-analyzer').BundleAnalyzerPlugin)()
-      );
-    }
-    return config;
   }
 };
